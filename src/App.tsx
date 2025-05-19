@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import FallingPetals from './components/FallingPetals';
@@ -78,37 +79,23 @@ function App() {
     };
   }, []);
 
-  // Get current path
-  const path = window.location.pathname;
-
-  // Render graduation page or main content based on path
-  if (path === '/graduation') {
-    return (
-             
-      <>
-     
-        <Header />
-        <Graduation />
-        <Footer />
-      </>
-    );
-  }
-
-
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <Hero />
-       <FallingPetals />
-      <Countdown />
-      <Playlist />
-      <Gallery />
-      <Facts />
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/graduation" element={<Graduation />} />
+        </Routes>
+        <FallingPetals />
+        <Countdown />
+        <Playlist />
+        <Gallery />
+        <Facts />
+        <Footer />
+      </div>
+    </Router>
   );
-
-  
- 
 }
+
 export default App;
