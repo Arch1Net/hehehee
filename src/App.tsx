@@ -14,7 +14,7 @@ import './styles/index.css';
 function App() {
   useEffect(() => {
     // Update page title
-    document.title = "Rinahs Birthday Celebration";
+    document.title = "Rinahs";
     
     // Add custom styles for scrolling behavior
     const style = document.createElement('style');
@@ -85,7 +85,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/graduation" element={<Graduation />} />
+          
         </Routes>
         <FallingPetals />
         <Countdown />
