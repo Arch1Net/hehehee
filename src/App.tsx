@@ -86,13 +86,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Hero />} />
           
-        </Routes>
+        
         <FallingPetals />
         <Countdown />
         <Playlist />
         <Gallery />
         <Facts />
         <Footer />
+          </Routes>
       </div>
     </Router>
   );
